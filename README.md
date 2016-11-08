@@ -1,5 +1,5 @@
 # SharedPreferencesManger
-## How to use
+## Before use it
 - 1. init SharedPreferencesManger
 ```
  public class MyApplication extends Application {
