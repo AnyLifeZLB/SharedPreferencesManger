@@ -8,9 +8,14 @@ public class MyApplication extends Application {
 		super.onCreate();
 		SharedPreferencesDao.initSharePrefenceDao(getApplicationContext());  //init SharedPreferencesManger
 	}
-```
+```  
+
 - 2. how to save data  
 saveData(String key, Object value) 
 
 - 3. how to get data  
-<T> T getData(String key, Object defValue, Class&lt;T> clazz); 
+<T> T getData(String key, Object defValue, Class&lt;T> clazz);   
+
+## Advice?
+
+Please contact me at anylife.zlb@gmail.com
