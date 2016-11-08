@@ -11,10 +11,10 @@
 }
 ```  
 
-- 2. how to save data
+- 2.how to save data
 saveData(String key, Object value) 
 
-- 3. how to get data
+- 3.how to get data
 <T> T getData(String key, Object defValue, Class&lt;T> clazz);  
 
 ## Demo set and get data  
@@ -22,11 +22,11 @@ saveData(String key, Object value)
    String jsonStr="1234567890-==-098765431";
    SharedPreferencesDao.getInstance().saveData("jsonStr",jsonStr);
 
-    SharedPreferencesDao.getInstance().saveData("test1",1111);
-    int test1=SharedPreferencesDao.getInstance().getData("test1",-1,Integer.class); //not good enough
-    int testTemp=SharedPreferencesDao.getInstance().getData("testTemp",250,Integer.class);  //have nokey testtemp
+   SharedPreferencesDao.getInstance().saveData("test1",1111);
+   int test1=SharedPreferencesDao.getInstance().getData("test1",-1,Integer.class); //not good enough
+   int testTemp=SharedPreferencesDao.getInstance().getData("testTemp",250,Integer.class);  //have nokey testtemp
 ```
 
 ## Advice?
 
-Please contact me at anylife.zlb@gmail.com
+Please contact me at anylife.zlb@gmail.com ,thank you.
