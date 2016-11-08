@@ -1,6 +1,6 @@
 # SharedPreferencesManger
 ## How to use
--1. init SharedPreferencesManger
+- 1. init SharedPreferencesManger
 ```
  public class MyApplication extends Application {
 	@Override
@@ -11,11 +11,11 @@
 }
 ```  
 
--2. how to save data  
+- 2. how to save data  
 saveData(String key, Object value) 
 
--3. how to get data  
-<T> T getData(String key, Object defValue, Class&lt;T> clazz);   
+- 3. how to get data  
+<T> T getData(String key, Object defValue, Class&lt;T> clazz);  
 
 ## Demo set and get data  
 ```
