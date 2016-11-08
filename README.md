@@ -19,8 +19,8 @@ saveData(String key, Object value)
 ## Demo set and get data  
 ```
 		SharedPreferencesDao.getInstance().saveData("test1",1111);
-		int test1=SharedPreferencesDao.getInstance().getData("test1",-1,Integer.class);             //会不会太繁琐了？
-		int testTemp=SharedPreferencesDao.getInstance().getData("testTemp",250,Integer.class);      //没有保存testTemp
+		int test1=SharedPreferencesDao.getInstance().getData("test1",-1,Integer.class); //not good enough
+		int testTemp=SharedPreferencesDao.getInstance().getData("testTemp",250,Integer.class);  //have nokey testtemp
 
 		SharedPreferencesDao.getInstance().saveData("test2","helloworld");
 		String test2=SharedPreferencesDao.getInstance().getData("Test2",0,String.class);  
