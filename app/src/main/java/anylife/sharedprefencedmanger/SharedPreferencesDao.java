@@ -41,7 +41,6 @@ public class SharedPreferencesDao {
 		mContext = applicationContext;
 	}
 
-
 	/**
 	The best way of storing double values in SharedPreferences without losing precision is:
 	Transform to bit representation to store it as long:
@@ -49,6 +48,9 @@ public class SharedPreferencesDao {
 	To retrieve, transfrom from bit representation to double:
 	        double latitude = Double.longBitsToDouble(prefs.getLong("Latitude", 0);
 	*/
+
+
+
 
 	/**
 	 *
@@ -59,7 +61,7 @@ public class SharedPreferencesDao {
 	 * @param <T>
 	 * @return
 	 */
-	public <T> T getDate(String key, @NonNull Object defValue, @NonNull Class<T> clazz) {
+	public <T> T getData(String key, @NonNull Object defValue, @NonNull Class<T> clazz) {
 		T t = null;
 		switch (clazz.getSimpleName()){
 			case "String":
@@ -90,7 +92,7 @@ public class SharedPreferencesDao {
 	 * @param key
 	 * @param value
 	 */
-	public void saveDate(String key, @NonNull Object value) {
+	public void saveData(String key, @NonNull Object value) {
 		if (value instanceof String) {
 			sharedPreferences.edit().putString(key, (String) value).commit();
 		} else if (value instanceof Integer) {
