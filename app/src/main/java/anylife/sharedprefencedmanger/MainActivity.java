@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
 				"    \"text\": \"Apple will publish a new Macbook& MacBook pro at 27/10/2016,if you like it ,buy it!\"\n" +
 				"}";
 		SharedPreferencesDao.getInstance().saveData("jsonStr",jsonStr);
+		SharedPreferencesDao.getInstance().getData("jsonStr","",String.class);
+		
 
 		SharedPreferencesDao.getInstance().saveData("test1",1111);
 		int test1=SharedPreferencesDao.getInstance().getData("test1",-1,Integer.class); //not good enough
