@@ -29,4 +29,7 @@ saveData(String key, Object value)
 
 ## Advice?
 
-Please contact me at anylife.zlb@gmail.com ,thank you .
+Please contact me at anylife.zlb@gmail.com ,thank you .  
+
+
+反射学习：http://blog.csdn.net/nugongahou110/article/details/46913461
