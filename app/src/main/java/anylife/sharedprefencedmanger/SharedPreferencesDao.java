@@ -15,17 +15,35 @@ public class SharedPreferencesDao {
 	private static SharedPreferencesDao sharedPreferencesDao;
 
 	public static SharedPreferencesDao getInstance() {
-		if (sharedPreferencesDao == null) {
-			sharedPreferencesDao = new SharedPreferencesDao();
-		}
+//		if (sharedPreferencesDao == null) {
+//			sharedPreferencesDao = new SharedPreferencesDao(Context.MODE_PRIVATE);
+//		}
+
+		sharedPreferencesDao = new SharedPreferencesDao(Context.MODE_MULTI_PROCESS);
+
+
+//		/**
+//		 * Multi Process，SP work fine ,But not Perfect
+//		 * WARMING: It is deprecated
+//		 * 	@Deprecated
+//		 */
+//		if(App.getProcessNum>1){
+//			sharedPreferencesDao = new SharedPreferencesDao(Context.MODE_MULTI_PROCESS);
+//		}
+
+
+
 		return sharedPreferencesDao;
 	}
 
-	private SharedPreferencesDao() {
+	/**
+	 * MODE_MULTI_PROCESS is not workable
+	 */
+	private SharedPreferencesDao(int mode) {
 		if (mContext != null) {
-			sharedPreferences = mContext.getSharedPreferences(SharedPreferencesName, Context.MODE_PRIVATE);
+			sharedPreferences = mContext.getSharedPreferences(SharedPreferencesName, mode);
 		} else {
-			Log.e(TAG, "WARMIKNG! You must initSharePrefenceDao in your Application！");
+			Log.e(TAG, "WARMIKNG! You must initSharePrefenceDao in your Application ！");
 		}
 	}
 
@@ -49,13 +67,9 @@ public class SharedPreferencesDao {
 	        double latitude = Double.longBitsToDouble(prefs.getLong("Latitude", 0);
 	*/
 
-
-
-
 	/**
+	 *if type of defvalue is not equal clazz
 	 *
-	 *
-	 * @param key
 	 * @param defValue
 	 * @param clazz
 	 * @param <T>
@@ -63,6 +77,13 @@ public class SharedPreferencesDao {
 	 */
 	public <T> T getData(String key, @NonNull Object defValue, @NonNull Class<T> clazz) {
 		T t = null;
+
+		if (!defValue.getClass().getSimpleName().equals(clazz.getSimpleName())) {
+			// TODO: 2016/12/2
+			throw new UnsupportedOperationException("Not yet implemented"); //转换将失败！
+		}
+		
+		
 		switch (clazz.getSimpleName()){
 			case "String":
 				t = (T) sharedPreferences.getString(key, (String) defValue);
