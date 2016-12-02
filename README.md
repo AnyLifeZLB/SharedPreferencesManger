@@ -26,6 +26,11 @@ saveData(String key, Object value)
    int test1=SharedPreferencesDao.getInstance().getData("test1",-1,Integer.class); //not good enough
    int testTemp=SharedPreferencesDao.getInstance().getData("testTemp",250,Integer.class);  //have nokey testtemp
 ```
+## Multi Process  
+
+   If Multi Process,use 		sharedPreferencesDao = new SharedPreferencesDao(Context.MODE_MULTI_PROCESS);  
+   More ,see     public abstract class Context (filed MODE_MULTI_PROCESS)  
+   public static final int MODE_MULTI_PROCESS = 0x0004
 
 ## Advice?
 
