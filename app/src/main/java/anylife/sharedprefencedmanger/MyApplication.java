@@ -4,6 +4,7 @@ package anylife.sharedprefencedmanger;
 import android.app.Application;
 
 /**
+ * 可以在这里多增加一级别的缓存，memo cache --> SP
  *
  */
 public class MyApplication extends Application {

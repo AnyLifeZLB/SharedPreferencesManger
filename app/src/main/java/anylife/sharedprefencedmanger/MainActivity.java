@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
 				test++;
 				SharedPreferencesDao.getInstance().saveData("TestMultiProcess",test);
 				Log.e("MuitiProcess","Main Proces:     "+SharedPreferencesDao.getInstance().getData("TestMultiProcess",-1,Integer.class));
-
 			}
 		});
 	}

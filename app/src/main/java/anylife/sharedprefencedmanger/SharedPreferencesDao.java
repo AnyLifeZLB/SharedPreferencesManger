@@ -80,7 +80,7 @@ public class SharedPreferencesDao {
 
 		if (!defValue.getClass().getSimpleName().equals(clazz.getSimpleName())) {
 			// TODO: 2016/12/2
-			throw new UnsupportedOperationException("Not yet implemented"); //转换将失败！
+			throw new UnsupportedOperationException("defValue type does not equals whit clazz "); //转换将失败！
 		}
 		
 		
