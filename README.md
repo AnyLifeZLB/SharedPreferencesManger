@@ -32,7 +32,8 @@ saveData(String key, Object value)
    More ,see     public abstract class Context (filed MODE_MULTI_PROCESS)  
    public static final int MODE_MULTI_PROCESS = 0x0004  
    
-   > but https://developer.android.com/reference/android/content/Context.html#MODE_MULTI_PROCESS
+   > you must know https://developer.android.com/reference/android/content/Context.html#MODE_MULTI_PROCESS  
+   > so,use it https://github.com/grandcentrix/tray
 
 ## Advice?
 
