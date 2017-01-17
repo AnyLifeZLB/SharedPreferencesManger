@@ -28,7 +28,7 @@ saveData(String key, Object value)
 ```
 ## Multi Process  
 
-   If Multi Process,use 		sharedPreferencesDao = new SharedPreferencesDao(Context.MODE_MULTI_PROCESS);  
+   If Multi Process(not work fine!),use 		sharedPreferencesDao = new SharedPreferencesDao(Context.MODE_MULTI_PROCESS);  
    More ,see     public abstract class Context (filed MODE_MULTI_PROCESS)  
    public static final int MODE_MULTI_PROCESS = 0x0004  
    
