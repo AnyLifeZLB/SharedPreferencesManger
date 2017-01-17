@@ -6,38 +6,26 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 
 /**
- * Save key-value data
- * singleton class
- * <p>
+ * MODE_MULTI_PROCESS  will not work fine,Use Content Provider
+ *
  * Created by zenglb on 2016/11/8.
  */
 public class SharedPreferencesDao {
+	private static final String TAG = SharedPreferencesDao.class.getSimpleName();
+	private static final String SharedPreferencesName = "YourAppName-Vanke";
+
 	private static SharedPreferencesDao sharedPreferencesDao;
 
 	public static SharedPreferencesDao getInstance() {
-//		if (sharedPreferencesDao == null) {
-//			sharedPreferencesDao = new SharedPreferencesDao(Context.MODE_PRIVATE);
-//		}
-
-		sharedPreferencesDao = new SharedPreferencesDao(Context.MODE_MULTI_PROCESS);
-
-
-//		/**
-//		 * Multi Process，SP work fine ,But not Perfect
-//		 * WARMING: It is deprecated
-//		 * 	@Deprecated
-//		 */
-//		if(App.getProcessNum>1){
-//			sharedPreferencesDao = new SharedPreferencesDao(Context.MODE_MULTI_PROCESS);
-//		}
-
-
+		if (sharedPreferencesDao == null) {
+			sharedPreferencesDao = new SharedPreferencesDao(Context.MODE_PRIVATE);
+		}
 
 		return sharedPreferencesDao;
 	}
 
 	/**
-	 * MODE_MULTI_PROCESS is not workable
+	 * MODE_MULTI_PROCESS  will not work fine
 	 */
 	private SharedPreferencesDao(int mode) {
 		if (mContext != null) {
@@ -47,8 +35,6 @@ public class SharedPreferencesDao {
 		}
 	}
 
-	private static final String TAG = SharedPreferencesDao.class.getSimpleName();
-	private static final String SharedPreferencesName = "YourAppName-Vanke";
 	private static Context mContext;   //init form application
 	private SharedPreferences sharedPreferences;
 
@@ -77,12 +63,10 @@ public class SharedPreferencesDao {
 	 */
 	public <T> T getData(String key, @NonNull Object defValue, @NonNull Class<T> clazz) {
 		T t = null;
-
 		if (!defValue.getClass().getSimpleName().equals(clazz.getSimpleName())) {
 			// TODO: 2016/12/2
 			throw new UnsupportedOperationException("defValue type does not equals whit clazz "); //转换将失败！
 		}
-		
 		
 		switch (clazz.getSimpleName()){
 			case "String":

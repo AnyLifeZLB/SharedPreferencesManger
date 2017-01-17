@@ -16,6 +16,7 @@ import anylife.sharedprefencedmanger.SharedPreferencesDao;
  * helper methods.
  */
 public class ServiceInOtherProcess extends IntentService {
+
 	// TODO: Rename actions, choose action names that describe tasks that this
 	// IntentService can perform, e.g. ACTION_FETCH_NEW_ITEMS
 	private static final String ACTION_FOO = "com.launcher.features.mainfragment.action.FOO";
@@ -99,7 +100,6 @@ public class ServiceInOtherProcess extends IntentService {
 
 			}
 		}
-
 
 	}
 }
