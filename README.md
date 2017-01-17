@@ -30,7 +30,10 @@ saveData(String key, Object value)
 
    If Multi Process,use 		sharedPreferencesDao = new SharedPreferencesDao(Context.MODE_MULTI_PROCESS);  
    More ,see     public abstract class Context (filed MODE_MULTI_PROCESS)  
-   public static final int MODE_MULTI_PROCESS = 0x0004
+   public static final int MODE_MULTI_PROCESS = 0x0004  
+   
+   > you must know https://developer.android.com/reference/android/content/Context.html#MODE_MULTI_PROCESS  
+   > so,use it https://github.com/grandcentrix/tray
 
 ## Advice?
 
